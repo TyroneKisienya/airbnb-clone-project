@@ -84,4 +84,16 @@ Features: Post and manage reviews for properties.
 
 **7. Database Optimizations**
 Indexing: Implement indexes for fast retrieval of frequently accessed data.
-Caching: Use caching strategies to reduce database load and improve performance.
+Caching: Use caching strategies to reduce database load and improve performance
+
+# **API Security**
+
+**Authentication & Authorization**: Implement robust token-based authentication (JWT/OAuth 2.0) with proper role-based access control. Ensure users can only access their own bookings, properties, and personal data, while hosts can only manage their own listings.
+
+**Input Validation & Sanitization**: Validate all incoming data to prevent injection attacks. This is critical for search queries, property descriptions, reviews, and user profile information that could be exploited through SQL injection or XSS attacks.
+
+**Rate Limiting & API Abuse Prevention**: Implement rate limiting to prevent scraping of property data, automated booking attempts, and DDoS attacks. Consider different limits for different endpoints based on their sensitivity and computational cost.
+
+**Data Encryption & PII Protection**: Encrypt sensitive data in transit (HTTPS) and at rest, especially payment information, personal identification documents, and private communications between hosts and guests. Implement proper data masking for sensitive fields in API responses.
+
+**API Gateway & Monitoring**: Use an API gateway for centralized security policies, logging, and monitoring. Track unusual patterns like rapid property searches, failed authentication attempts, or suspicious booking patterns that could indicate fraudulent activity.
