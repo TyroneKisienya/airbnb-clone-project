@@ -98,7 +98,7 @@ Caching: Use caching strategies to reduce database load and improve performance
 
 **API Gateway & Monitoring**: Use an API gateway for centralized security policies, logging, and monitoring. Track unusual patterns like rapid property searches, failed authentication attempts, or suspicious booking patterns that could indicate fraudulent activity.
 
-# **CI/CD Pipeline Overview**
+# **CI/CD Pipeline**
 
 **Source Control & Triggers**: Code commits to main branches (develop/staging/main) automatically trigger the pipeline. Using Git hooks or webhook integrations with GitHub/GitLab to start builds on pull requests and merges.
 
