@@ -56,11 +56,11 @@ The backend for the Airbnb Clone project is designed to provide a robust and sca
 # 🛠️ **Feature Breakdown**
 **1. API Documentation**
 
-**OpenAPI Standard**: The backend APIs are documented using the OpenAPI standard to ensure clarity and ease of integration.
+- **OpenAPI Standard**: The backend APIs are documented using the OpenAPI standard to ensure clarity and ease of integration.
 
-**Django REST Framework**: Provides a comprehensive RESTful API for handling CRUD operations on user and property data.
+- **Django REST Framework**: Provides a comprehensive RESTful API for handling CRUD operations on user and property data.
 
-**GraphQL**: Offers a flexible and efficient query mechanism for interacting with the backend.
+- **GraphQL**: Offers a flexible and efficient query mechanism for interacting with the backend.
 
 **2. User Authentication**
 Endpoints: /users/, /users/{user_id}/
@@ -97,3 +97,21 @@ Caching: Use caching strategies to reduce database load and improve performance
 **Data Encryption & PII Protection**: Encrypt sensitive data in transit (HTTPS) and at rest, especially payment information, personal identification documents, and private communications between hosts and guests. Implement proper data masking for sensitive fields in API responses.
 
 **API Gateway & Monitoring**: Use an API gateway for centralized security policies, logging, and monitoring. Track unusual patterns like rapid property searches, failed authentication attempts, or suspicious booking patterns that could indicate fraudulent activity.
+
+# **CI/CD Pipeline Overview**
+
+**Source Control & Triggers**: Code commits to main branches (develop/staging/main) automatically trigger the pipeline. Using Git hooks or webhook integrations with GitHub/GitLab to start builds on pull requests and merges.
+
+**Continuous Integration (CI) Stage**: 
+- **Build & Test**: Compile code, run unit tests, integration tests, and API tests
+- **Code Quality**: Run linting, security scans (SAST tools), and dependency vulnerability checks
+- **Artifacts**: Package the application (Docker images, build artifacts) and store in a registry
+
+**Continuous Deployment (CD) Stages**:
+- **Development Environment**: Auto-deploy to dev environment for initial testing and developer validation
+- **Staging Environment**: Deploy to production-like staging for QA testing, performance testing, and user acceptance testing
+- **Production Environment**: Deploy to production with approval gates, blue-green deployment, or rolling updates to minimize downtime
+
+**Monitoring & Rollback**: Implement health checks, automated monitoring, and logging. Have rollback mechanisms ready if deployments fail or performance degrades. Use feature flags to safely release new functionality.
+
+This pipeline ensures code quality, reduces manual errors, and enables rapid, reliable releases while maintaining system stability.
