@@ -42,7 +42,7 @@ The backend for the Airbnb Clone project is designed to provide a robust and sca
 
 **4. QA Engineer**: Ensures the backend functionalities are thoroughly tested and meet quality standards.
 
-# Database design
+# **Database Design**
 **1. Users' tables**: Capturing user required bio-data and demographic data. The later data used for wider range in anaysis. Register, authenticate and manage profiles
 
 **2. Property**: Register property owned by admins. Create, update,manage property listings
